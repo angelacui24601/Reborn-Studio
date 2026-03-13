@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Reborn Studios</title>
+  <meta name="description" content="About Reborn Studios — the people, vision, and values behind the agency." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       CUSTOM CURSOR
+  ══════════════════════════════════ -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">REBORN<span>.</span></a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <!-- ══════════════════════════════════
+       PAGE HEADER
+  ══════════════════════════════════ -->
+  <main class="about-main">
+    <div class="page-header">
+      <div class="section-label fade-up">The Agency</div>
+      <h1 class="fade-up" style="transition-delay:0.1s">About<br>Us</h1>
+    </div>
+
+    <!-- ══════════════════════════════════
+         AGENCY VISION
+    ══════════════════════════════════ -->
+    <section class="about-vision">
+
+      <!-- Left: Vision statement -->
+      <div>
+        <div class="section-label fade-up">Our Vision</div>
+        <p class="about-vision-text fade-up" style="transition-delay:0.1s">
+          Reborn Studios exists to help brands tell stories that
+          <em>resonate with culture.</em> We believe powerful visual
+          narratives create lasting impact.
+        </p>
+      </div>
+
+      <!-- Right: Detail copy + stats -->
+      <div class="about-vision-right fade-up" style="transition-delay:0.2s">
+        <p>
+          Founded in New York in 2018, Reborn Studios grew out of a shared belief among
+          its founders that the creative agency model had grown too comfortable — too safe.
+          Too focused on meeting briefs and not enough on breaking them.
+        </p>
+        <p>
+          We built a practice that sits at the intersection of editorial craft and commercial
+          ambition. Our work spans brand identity, film production, photography, and
+          large-scale campaign rollouts across global markets.
+        </p>
+        <p>
+          Every project begins with a simple question: what does it mean for this brand
+          to be <em>alive</em> right now? The answer shapes everything — from the typeface
+          we choose to the neighborhoods we shoot in.
+        </p>
+
+        <!-- Stats grid -->
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-num">200<span>+</span></div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">80<span>+</span></div>
+            <div class="stat-label">Global Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">7<span>+</span></div>
+            <div class="stat-label">Years Active</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════
+         MARQUEE BAND (values)
+    ══════════════════════════════════ -->
+    <div class="marquee-section">
+      <div class="marquee-track">
+        <span class="marquee-item">Authenticity <span class="dot">·</span></span>
+        <span class="marquee-item">Craft <span class="dot">·</span></span>
+        <span class="marquee-item">Cultural Intelligence <span class="dot">·</span></span>
+        <span class="marquee-item">Fearless Vision <span class="dot">·</span></span>
+        <span class="marquee-item">Precision <span class="dot">·</span></span>
+        <span class="marquee-item">Collaboration <span class="dot">·</span></span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">Authenticity <span class="dot">·</span></span>
+        <span class="marquee-item">Craft <span class="dot">·</span></span>
+        <span class="marquee-item">Cultural Intelligence <span class="dot">·</span></span>
+        <span class="marquee-item">Fearless Vision <span class="dot">·</span></span>
+        <span class="marquee-item">Precision <span class="dot">·</span></span>
+        <span class="marquee-item">Collaboration <span class="dot">·</span></span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         TEAM SECTION
+    ══════════════════════════════════ -->
+    <section class="team-section">
+      <div class="team-inner">
+
+        <!-- Header -->
+        <div class="team-header fade-up">
+          <div class="section-label" style="color: var(--gray-3);">The People</div>
+          <h2>Our<br>Team</h2>
+        </div>
+
+        <!-- Team grid: 3 members -->
+        <div class="team-grid">
+
+          <!-- Member 1: Creative Director -->
+          <div class="team-card fade-up">
+            <div class="team-card-img">
+              <div class="img-placeholder" style="background: linear-gradient(160deg, #2a2318 0%, #4a3828 60%, #1a1a1a 100%);"></div>
+            </div>
+            <div class="team-card-name">Jordan K.</div>
+            <div class="team-card-title">Creative Director</div>
+            <p style="font-size: 0.82rem; color: var(--gray-3); line-height: 1.6; margin-top: 12px;">
+              With 15 years shaping visual identity across fashion, tech, and culture,
+              Jordan leads the conceptual and artistic direction of every Reborn campaign.
+            </p>
+          </div>
+
+          <!-- Member 2: Producer -->
+          <div class="team-card fade-up" style="transition-delay:0.1s">
+            <div class="team-card-img">
+              <div class="img-placeholder" style="background: linear-gradient(160deg, #181824 0%, #2a2a3e 60%, #1a1a2a 100%);"></div>
+            </div>
+            <div class="team-card-name">Marcus T.</div>
+            <div class="team-card-title">Producer</div>
+            <p style="font-size: 0.82rem; color: var(--gray-3); line-height: 1.6; margin-top: 12px;">
+              Marcus has produced award-winning commercial work across four continents.
+              His instinct for logistics and storytelling keeps every production moving
+              — and purposeful.
+            </p>
+          </div>
+
+          <!-- Member 3: Visual Designer -->
+          <div class="team-card fade-up" style="transition-delay:0.2s">
+            <div class="team-card-img">
+              <div class="img-placeholder" style="background: linear-gradient(160deg, #1e1c18 0%, #383428 60%, #1a1a18 100%);"></div>
+            </div>
+            <div class="team-card-name">Aisha M.</div>
+            <div class="team-card-title">Visual Designer</div>
+            <p style="font-size: 0.82rem; color: var(--gray-3); line-height: 1.6; margin-top: 12px;">
+              Aisha brings a rare balance of typographic rigor and intuitive composition
+              to every project. Her design systems have anchored campaigns from Seoul
+              to São Paulo.
+            </p>
+          </div>
+
+        </div>
+        <!-- /team-grid -->
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CTA SECTION
+    ══════════════════════════════════ -->
+    <section style="padding: 120px 48px; max-width: 1200px; margin: 0 auto; text-align: center;">
+      <div class="section-label fade-up" style="justify-content: center;">Work With Us</div>
+      <h2 class="fade-up" style="font-family: var(--font-display); font-size: clamp(3rem, 8vw, 7rem); line-height: 0.9; color: var(--black); margin: 24px 0 48px; transition-delay:0.1s;">
+        Let's Make<br><em style="font-family: var(--font-serif); font-style: italic; color: var(--warm);">Something</em><br>Unforgettable.
+      </h2>
+      <div class="fade-up" style="transition-delay:0.2s; display: flex; gap:16px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:hello@rebornstudios.com" class="btn btn-fill">Get In Touch</a>
+        <a href="portfolio.html" class="btn">View Our Work</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">REBORN<span>.</span></div>
+        <p class="footer-tagline">Bold visual campaigns that connect brands<br>with modern audiences.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@rebornstudios.com">hello@rebornstudios.com</a>
+        <p style="margin-top:20px; color: var(--gray-3);">Follow Us</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="#" aria-label="Vimeo">VM</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Reborn Studios. All rights reserved.</span>
+      <span>New York, NY</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════ -->
+  <script>
+    // ── Custom cursor ──
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .team-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+    });
+
+    // ── Navbar scroll ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Mobile menu ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // ── Fade-up on scroll ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

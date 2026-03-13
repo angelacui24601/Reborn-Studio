@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reborn Studios — Creative Agency</title>
+  <meta name="description" content="Reborn Studios is a creative agency specializing in visual storytelling, brand campaigns, and multimedia production." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       CUSTOM CURSOR
+  ══════════════════════════════════ -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">REBORN<span>.</span></a>
+
+    <!-- Desktop Nav -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <!-- ══════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-noise"></div>
+
+    <div class="hero-inner">
+      <!-- Live label -->
+      <div class="hero-ticker fade-up">
+        <div class="ticker-dot"></div>
+        Creative Agency — Est. 2018 — New York
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="fade-up" style="transition-delay:0.1s">
+        Creative<br>
+        Campaigns<br>
+        That <em>Move</em><br>
+        Culture
+      </h1>
+
+      <!-- Sub + CTA -->
+      <div class="hero-bottom fade-up" style="transition-delay:0.2s">
+        <p class="hero-sub">
+          Reborn Studios is a creative agency specializing in visual storytelling,
+          brand campaigns, and multimedia production.
+        </p>
+        <div class="hero-cta">
+          <a href="portfolio.html" class="btn btn-fill">View Portfolio</a>
+          <a href="about.html" class="btn">About Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MARQUEE BAND
+  ══════════════════════════════════ -->
+  <div class="marquee-section">
+    <!-- Two identical tracks for seamless loop -->
+    <div class="marquee-track">
+      <!-- Track 1 -->
+      <span class="marquee-item">Creative Direction <span class="dot">·</span></span>
+      <span class="marquee-item">Brand Campaigns <span class="dot">·</span></span>
+      <span class="marquee-item">Visual Storytelling <span class="dot">·</span></span>
+      <span class="marquee-item">Campaign Production <span class="dot">·</span></span>
+      <span class="marquee-item">Motion Design <span class="dot">·</span></span>
+      <span class="marquee-item">Photography <span class="dot">·</span></span>
+      <!-- Track 2 (duplicate for loop) -->
+      <span class="marquee-item">Creative Direction <span class="dot">·</span></span>
+      <span class="marquee-item">Brand Campaigns <span class="dot">·</span></span>
+      <span class="marquee-item">Visual Storytelling <span class="dot">·</span></span>
+      <span class="marquee-item">Campaign Production <span class="dot">·</span></span>
+      <span class="marquee-item">Motion Design <span class="dot">·</span></span>
+      <span class="marquee-item">Photography <span class="dot">·</span></span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       AGENCY MISSION
+  ══════════════════════════════════ -->
+  <section class="mission-section">
+    <!-- Left: label -->
+    <div>
+      <div class="section-label fade-up">Our Mission</div>
+    </div>
+
+    <!-- Right: statement -->
+    <div class="fade-up" style="transition-delay:0.1s">
+      <p class="mission-text">
+        Reborn Studios creates <strong>bold visual campaigns</strong> that connect brands
+        with modern audiences through storytelling, design,
+        and media production.
+      </p>
+      <div style="margin-top: 48px; display: flex; gap: 64px; flex-wrap: wrap;">
+        <div>
+          <div style="font-family: var(--font-display); font-size: 3rem; color: var(--black);">200<span style="color:var(--warm)">+</span></div>
+          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top: 4px;">Campaigns</div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 3rem; color: var(--black);">80<span style="color:var(--warm)">+</span></div>
+          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top: 4px;">Global Clients</div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 3rem; color: var(--black);">7<span style="color:var(--warm)">+</span></div>
+          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top: 4px;">Years Active</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SERVICES OVERVIEW
+  ══════════════════════════════════ -->
+  <section>
+    <div class="services-section">
+      <!-- Header -->
+      <div class="services-header">
+        <h2 class="services-title fade-up">What We Do</h2>
+        <div class="section-label fade-up" style="transition-delay:0.1s">Services</div>
+      </div>
+
+      <!-- 3-column grid -->
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card fade-up">
+          <span class="service-num">01</span>
+          <h3>Creative Direction</h3>
+          <p>
+            We shape the conceptual foundation of every campaign — from visual language
+            and tone to the overarching narrative that guides a brand's creative output.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card fade-up" style="transition-delay:0.1s">
+          <span class="service-num">02</span>
+          <h3>Campaign Production</h3>
+          <p>
+            End-to-end production capabilities: scripting, casting, filming, editing,
+            and delivery across digital, broadcast, and out-of-home platforms.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card fade-up" style="transition-delay:0.2s">
+          <span class="service-num">03</span>
+          <h3>Visual Storytelling</h3>
+          <p>
+            Crafting imagery and motion that speaks before words can. Photography,
+            art direction, and motion design converge to tell unforgettable stories.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FEATURED WORK PREVIEW
+  ══════════════════════════════════ -->
+  <section class="featured-section">
+    <div class="featured-inner">
+      <!-- Header -->
+      <div class="featured-header">
+        <h2 class="fade-up">Featured<br>Work</h2>
+        <div class="section-label fade-up" style="color: var(--gray-3);">Selected Projects</div>
+      </div>
+
+      <!-- Project cards -->
+      <div class="featured-grid">
+
+        <!-- Card 1 -->
+        <div class="project-card fade-up">
+          <div class="project-card-img">
+            <div class="img-placeholder" style="background: linear-gradient(135deg, #1a1a1a 0%, #3a3028 100%);"></div>
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-cat">Brand Campaign</div>
+            <div class="project-card-title">Urban Motion</div>
+            <p class="project-card-desc">A visual identity campaign bridging street culture with luxury sportswear.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card fade-up" style="transition-delay:0.1s">
+          <div class="project-card-img">
+            <div class="img-placeholder" style="background: linear-gradient(135deg, #2a2318 0%, #4a3820 100%);"></div>
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-cat">Photography</div>
+            <div class="project-card-title">Still Life Series</div>
+            <p class="project-card-desc">Editorial photography series exploring texture and materiality for a fragrance house.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card fade-up" style="transition-delay:0.2s">
+          <div class="project-card-img">
+            <div class="img-placeholder" style="background: linear-gradient(135deg, #181824 0%, #282838 100%);"></div>
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-cat">Video Campaign</div>
+            <div class="project-card-title">Neon Futures</div>
+            <p class="project-card-desc">A 60-second launch film for a tech brand entering the consumer market.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="featured-footer fade-up">
+        <a href="portfolio.html" class="btn btn-warm">See All Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo">REBORN<span>.</span></div>
+        <p class="footer-tagline">
+          Bold visual campaigns that connect brands<br>
+          with modern audiences.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@rebornstudios.com">hello@rebornstudios.com</a>
+        <p style="margin-top:20px; color: var(--gray-3);">Follow Us</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="#" aria-label="Vimeo">VM</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>© 2024 Reborn Studios. All rights reserved.</span>
+      <span>New York, NY</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════ -->
+  <script>
+    // ── Custom cursor ──
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .service-card, .project-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+    });
+
+    // ── Navbar scroll ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Mobile menu ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // ── Fade-up on scroll ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
