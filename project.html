@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Reborn Studios</title>
+  <meta name="description" content="Project detail — Reborn Studios" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       CUSTOM CURSOR
+  ══════════════════════════════════ -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- ══════════════════════════════════
+       PROJECT DETAIL LAYOUT
+       Left = fixed info panel
+       Right = scrollable masonry
+  ══════════════════════════════════ -->
+  <div class="project-detail-layout">
+
+    <!-- ════════════════════════════
+         LEFT PANEL (fixed)
+    ════════════════════════════ -->
+    <aside class="project-left" id="projectLeft">
+      <div class="project-left-inner">
+
+        <!-- Back to Portfolio -->
+        <a href="portfolio.html" class="back-btn" id="backBtn">
+          <span class="back-arrow">←</span>
+          <span>Portfolio</span>
+        </a>
+
+        <!-- Category badge -->
+        <div class="proj-cat-badge" id="projCat">—</div>
+
+        <!-- Title -->
+        <h1 class="proj-title" id="projTitle">Loading...</h1>
+
+        <!-- Meta grid: client / year / scope -->
+        <div class="proj-meta-grid">
+          <div class="proj-meta-item">
+            <div class="proj-meta-label">Client</div>
+            <div class="proj-meta-val" id="projClient">—</div>
+          </div>
+          <div class="proj-meta-item">
+            <div class="proj-meta-label">Year</div>
+            <div class="proj-meta-val" id="projYear">—</div>
+          </div>
+          <div class="proj-meta-item" style="grid-column: 1/-1;">
+            <div class="proj-meta-label">Scope</div>
+            <div class="proj-meta-val" id="projScope">—</div>
+          </div>
+        </div>
+
+        <!-- Description copy -->
+        <div class="proj-description" id="projDescription">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Results block -->
+        <div class="proj-results" id="projResults">
+          <div class="proj-results-label">Results</div>
+          <div class="proj-stats" id="projStats">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <!-- Next project — pinned to bottom -->
+        <div class="next-project-btn">
+          <div class="next-label">Next Project</div>
+          <a href="#" class="next-link" id="nextProjectLink">
+            <span id="nextProjectTitle">—</span>
+            <span class="next-link-arrow">→</span>
+          </a>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- ════════════════════════════
+         RIGHT PANEL (scrollable masonry)
+    ════════════════════════════ -->
+    <main class="project-right" id="projectRight">
+      <!-- Injected by JS -->
+    </main>
+
+  </div>
+
+  <!-- ══════════════════════════════════
+       PROJECT DATA
+       All 6 projects defined here.
+       isVideo = true → video block
+       appears first in masonry.
+  ══════════════════════════════════ -->
+  <script>
+  /* ─────────────────────────────────────────────
+     PROJECT DATABASE
+     Each project has:
+       id, title, category, isVideo,
+       client, year, scope,
+       description (HTML string),
+       stats: [{num, label}],
+       masonry: [{size, bg, caption}]
+         size: 'tall' | 'wide' | 'sq' | 'short' | 'port'
+  ───────────────────────────────────────────── */
+  const PROJECTS = [
+    {
+      id: 1,
+      title: 'Urban Motion Campaign',
+      category: 'Brand Campaign',
+      isVideo: false,
+      client: 'Meridian Apparel Co.',
+      year: '2024',
+      scope: 'Creative Direction, Art Direction, Photography',
+      description: `
+        <h4>The Challenge</h4>
+        <p>Meridian Apparel wanted to reposition from mid-market streetwear into premium lifestyle — without losing the cultural credibility that made them relevant. We needed to speak fluently across two audiences that rarely share the same visual language.</p>
+        <h4 style="margin-top:20px;">Our Approach</h4>
+        <p>We built the campaign around motion as identity — the way the city moves, and how clothing moves through it. Shot across five New York neighborhoods over three weeks, the imagery captures authentic energy at an elevated production level.</p>
+      `,
+      stats: [
+        { num: '42%', label: 'Traffic Increase' },
+        { num: '3×',  label: 'Sell-through Rate' },
+      ],
+      masonry: [
+        { size: 'tall',  bg: 'linear-gradient(160deg,#2a2318,#5a4530)', caption: 'Campaign — Look 01' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#3a2e20,#6a5540)', caption: 'Campaign — Look 02' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#1a1510,#4a3828)', caption: 'Campaign — Street OOH' },
+        { size: 'port',  bg: 'linear-gradient(160deg,#241c12,#5a4030)', caption: 'Campaign — Look 03' },
+        { size: 'short', bg: 'linear-gradient(160deg,#2e2418,#5a4530)', caption: 'Campaign — Detail' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#1e1810,#4a3820)', caption: 'Campaign — Look 04' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#3a2e20,#6a5038)', caption: 'Campaign — Look 05' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#2a2218,#5a4530)', caption: 'Campaign — Print Layout' },
+      ],
+    },
+    {
+      id: 2,
+      title: 'Neon Futures',
+      category: 'Video Campaign',
+      isVideo: true,
+      videoLabel: 'Neon Futures — 60 sec. Launch Film',
+      client: 'Vanta Tech',
+      year: '2024',
+      scope: 'Creative Direction, Film Production, Post-Production',
+      description: `
+        <h4>The Challenge</h4>
+        <p>Vanta Tech needed a launch film that communicated their AI product's power without falling into the tired language of tech advertising — no floating UI panels, no robotic voices, no generic futures.</p>
+        <h4 style="margin-top:20px;">Our Approach</h4>
+        <p>We shot at night across Tokyo and New York, building a visual language around human presence inside artificial light. The contrast between warmth and neon became the film's central metaphor for technology as an extension of people — not a replacement.</p>
+      `,
+      stats: [
+        { num: '12M',  label: 'Views in 30 days' },
+        { num: '89%',  label: 'Brand Recall Score' },
+        { num: '4.1×', label: 'ROI on Media Spend' },
+      ],
+      masonry: [
+        { size: 'wide',  bg: 'linear-gradient(160deg,#0a0a20,#303060)', caption: 'Film — Tokyo Night 01' },
+        { size: 'port',  bg: 'linear-gradient(160deg,#181828,#282858)', caption: 'Film — New York 01' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#0e0e24,#242460)', caption: 'Film — Still 03' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#141430,#303068)', caption: 'Film — Tokyo Night 02' },
+        { size: 'short', bg: 'linear-gradient(160deg,#0a0a1e,#282850)', caption: 'Film — Product Close' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#181838,#303060)', caption: 'Film — Final Frame' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#101028,#282858)', caption: 'Film — BTS' },
+      ],
+    },
+    {
+      id: 3,
+      title: 'Still Life Series',
+      category: 'Photography',
+      isVideo: false,
+      client: 'Maison Delacroix',
+      year: '2023',
+      scope: 'Art Direction, Studio Photography, Retouching',
+      description: `
+        <h4>The Challenge</h4>
+        <p>Maison Delacroix needed a photography series that could anchor a new fragrance line across print, digital, and in-store. The images had to convey the materiality — glass, liquid, botanical ingredients — without feeling clinical.</p>
+        <h4 style="margin-top:20px;">Our Approach</h4>
+        <p>We worked in a controlled studio environment with custom-built light rigs to emphasize texture and refraction. Each image was designed to stand alone as a composition while collectively building a coherent visual world for the fragrance house.</p>
+      `,
+      stats: [
+        { num: '18',   label: 'Hero Images' },
+        { num: '4',    label: 'Market Launches' },
+        { num: '220%', label: 'Engagement Lift' },
+      ],
+      masonry: [
+        { size: 'sq',    bg: 'linear-gradient(160deg,#1c1c1c,#3a3a3a)', caption: 'Still Life — Flacon 01' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#181818,#303030)', caption: 'Still Life — Ingredients' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#242424,#404040)', caption: 'Still Life — Full Set' },
+        { size: 'port',  bg: 'linear-gradient(160deg,#1a1a1a,#383838)', caption: 'Still Life — Flacon 02' },
+        { size: 'short', bg: 'linear-gradient(160deg,#202020,#3c3c3c)', caption: 'Still Life — Detail' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#161616,#303030)', caption: 'Still Life — Botanicals' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#1c1c1c,#383838)', caption: 'Still Life — Flacon 03' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#222222,#3e3e3e)', caption: 'Still Life — Campaign Spread' },
+      ],
+    },
+    {
+      id: 4,
+      title: 'Roots & Routes',
+      category: 'Video Campaign',
+      isVideo: true,
+      videoLabel: 'Roots & Routes — 90 sec. Documentary Film',
+      client: 'Terrain Outfitters',
+      year: '2023',
+      scope: 'Creative Direction, Documentary Production, Sound Design',
+      description: `
+        <h4>The Challenge</h4>
+        <p>Terrain Outfitters had built a loyal following in the outdoor community but struggled to articulate what made their brand different from larger competitors. They needed content that felt documentary — not advertising.</p>
+        <h4 style="margin-top:20px;">Our Approach</h4>
+        <p>We followed four real explorers over 14 days across Scottish Highlands, Patagonia, and the Cascades. The resulting 90-second film is built from genuine moments — not scripted performances. Sound design drew on recordings made on location.</p>
+      `,
+      stats: [
+        { num: '3.4M', label: 'Organic Views' },
+        { num: '58%',  label: 'YoY Sales Growth' },
+        { num: '14',   label: 'Days on Location' },
+      ],
+      masonry: [
+        { size: 'wide',  bg: 'linear-gradient(160deg,#101810,#2a3e22)', caption: 'Film — Highlands 01' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#121a10,#283824)', caption: 'Film — Patagonia' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#0e160e,#24341e)', caption: 'Film — Cascade Range' },
+        { size: 'port',  bg: 'linear-gradient(160deg,#141c12,#2e4026)', caption: 'Film — Portrait 01' },
+        { size: 'short', bg: 'linear-gradient(160deg,#101810,#283c22)', caption: 'Film — Gear Detail' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#0c1408,#243220)', caption: 'Film — Final Frame' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#121a10,#2a3a22)', caption: 'Film — BTS' },
+      ],
+    },
+    {
+      id: 5,
+      title: 'Ember & Ash',
+      category: 'Brand Campaign',
+      isVideo: false,
+      client: 'Ember & Ash Distillery',
+      year: '2023',
+      scope: 'Brand Identity, Art Direction, Packaging, Campaign Photography',
+      description: `
+        <h4>The Challenge</h4>
+        <p>Ember & Ash was a new artisan spirits label entering a saturated premium market. They needed a full brand identity — not just a logo, but a complete visual world that could carry through to packaging, campaigns, and retail environments.</p>
+        <h4 style="margin-top:20px;">Our Approach</h4>
+        <p>We built the identity around the concept of controlled fire: warmth, ritual, and precision. The color language — deep charcoal and ember amber — became the organizing principle for everything from bottle labels to the seasonal campaign photography.</p>
+      `,
+      stats: [
+        { num: '34',  label: 'Retail Partners' },
+        { num: '2×',  label: 'Launch Volume Target' },
+        { num: '8',   label: 'Awards Won' },
+      ],
+      masonry: [
+        { size: 'tall',  bg: 'linear-gradient(160deg,#241818,#4a2828)', caption: 'Brand — Bottle 01' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#1e1414,#3e2020)', caption: 'Brand — Packaging Detail' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#2a1c1c,#503030)', caption: 'Brand — Campaign Spread' },
+        { size: 'port',  bg: 'linear-gradient(160deg,#201818,#402828)', caption: 'Brand — Bottle 02' },
+        { size: 'short', bg: 'linear-gradient(160deg,#281e1e,#4a2e2e)', caption: 'Brand — Lifestyle 01' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#1e1616,#3c2424)', caption: 'Brand — Label System' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#241a1a,#4a2c2c)', caption: 'Brand — Lifestyle 02' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#201818,#483030)', caption: 'Brand — Retail Display' },
+      ],
+    },
+    {
+      id: 6,
+      title: 'Portraits of Now',
+      category: 'Photography',
+      isVideo: false,
+      client: 'Self-initiated / Editorial',
+      year: '2022',
+      scope: 'Photography, Creative Direction, Editorial Design',
+      description: `
+        <h4>The Project</h4>
+        <p>A self-initiated portrait series documenting contemporary creatives — artists, designers, musicians, and writers — across New York, London, and Tokyo. The project ran over 18 months and became an editorial series published in three independent magazines.</p>
+        <h4 style="margin-top:20px;">Our Approach</h4>
+        <p>Each session was conducted in the subject's own environment — studio, home, or workspace. We used available light wherever possible, and limited the session to 90 minutes to preserve spontaneity. No stylist, no set design.</p>
+      `,
+      stats: [
+        { num: '48',  label: 'Subjects Photographed' },
+        { num: '3',   label: 'Cities' },
+        { num: '18',  label: 'Months' },
+      ],
+      masonry: [
+        { size: 'port',  bg: 'linear-gradient(160deg,#1e1c18,#3c3830)', caption: 'Portrait — New York 01' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#242018,#403c30)', caption: 'Portrait — London 01' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#201e18,#3a3628)', caption: 'Portrait — Tokyo 01' },
+        { size: 'wide',  bg: 'linear-gradient(160deg,#1c1a14,#383428)', caption: 'Portrait — New York 02' },
+        { size: 'short', bg: 'linear-gradient(160deg,#222018,#403c30)', caption: 'Portrait — London 02' },
+        { size: 'port',  bg: 'linear-gradient(160deg,#1e1c18,#3c3830)', caption: 'Portrait — Tokyo 02' },
+        { size: 'sq',    bg: 'linear-gradient(160deg,#242018,#444038)', caption: 'Portrait — New York 03' },
+        { size: 'tall',  bg: 'linear-gradient(160deg,#201e18,#3e3a30)', caption: 'Portrait — London 03' },
+      ],
+    },
+  ];
+
+  /* ─────────────────────────────────────────────
+     BOOT: read ?id from URL, render the page
+  ───────────────────────────────────────────── */
+  (function boot() {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id')) || 1;
+    const project = PROJECTS.find(p => p.id === id) || PROJECTS[0];
+
+    // Work out next project (wraps around)
+    const nextIdx = PROJECTS.findIndex(p => p.id === project.id);
+    const nextProject = PROJECTS[(nextIdx + 1) % PROJECTS.length];
+
+    // ── Populate page title ──
+    document.title = `${project.title} — Reborn Studios`;
+
+    // ── Left panel: inject content ──
+    document.getElementById('projCat').textContent   = project.category;
+    document.getElementById('projTitle').textContent  = project.title;
+    document.getElementById('projClient').textContent = project.client;
+    document.getElementById('projYear').textContent   = project.year;
+    document.getElementById('projScope').textContent  = project.scope;
+    document.getElementById('projDescription').innerHTML = project.description;
+
+    // Stats
+    const statsEl = document.getElementById('projStats');
+    statsEl.innerHTML = project.stats.map(s => `
+      <div>
+        <div class="proj-stat-num">${s.num}</div>
+        <div class="proj-stat-label">${s.label}</div>
+      </div>
+    `).join('');
+
+    // Next project link
+    document.getElementById('nextProjectTitle').textContent = nextProject.title;
+    document.getElementById('nextProjectLink').href = `project.html?id=${nextProject.id}`;
+
+    // ── Right panel: build masonry ──
+    const right = document.getElementById('projectRight');
+
+    // If video project: video block comes first
+    if (project.isVideo) {
+      right.innerHTML += `
+        <div class="right-section-label">Campaign Film</div>
+        <div class="masonry-video" style="margin-bottom:32px;">
+          <div class="video-placeholder">
+            <div class="img-placeholder" style="position:absolute;inset:0;opacity:0.25;background:${project.masonry[0].bg};"></div>
+            <div class="play-btn">▶</div>
+            <div class="video-label">${project.videoLabel}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Masonry section label
+    right.innerHTML += `<div class="right-section-label">Visual Gallery</div>`;
+
+    // Masonry grid
+    const grid = document.createElement('div');
+    grid.className = 'masonry-grid';
+
+    project.masonry.forEach(item => {
+      const div = document.createElement('div');
+      div.className = `masonry-item ${item.size}`;
+      div.innerHTML = `
+        <div class="img-placeholder" style="background:${item.bg};"></div>
+        <div class="masonry-caption">${item.caption}</div>
+      `;
+      grid.appendChild(div);
+    });
+
+    right.appendChild(grid);
+  })();
+
+  /* ─────────────────────────────────────────────
+     CURSOR
+  ───────────────────────────────────────────── */
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, .masonry-item, .video-placeholder').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+  });
+
+  </script>
+
+</body>
+</html>
