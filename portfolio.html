@@ -68,191 +68,60 @@
         <button class="filter-btn" data-filter="brand">Brand Campaign</button>
       </div>
 
-      <!-- 6-project Grid -->
-      <div class="portfolio-grid">
-
-        <!-- Project 1 — Brand Campaign -->
-        <a href="project.html?id=1" class="port-card fade-up" data-cat="brand" style="display:block; text-decoration:none; color:inherit;">
-          <div class="port-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #2a2318 0%, #5a4530 100%);"></div>
-            <div class="port-overlay">
-              <div class="port-overlay-icon">→</div>
-            </div>
-          </div>
-          <div class="port-card-body">
-            <div class="port-card-cat">Brand Campaign</div>
-            <div class="port-card-title">Urban Motion Campaign</div>
-            <p class="port-card-desc">A full brand identity campaign for a streetwear label launching into the luxury market.</p>
-          </div>
-        </a>
-
-        <!-- Project 2 — Video Campaign -->
-        <a href="project.html?id=2" class="port-card fade-up" data-cat="video" style="display:block; text-decoration:none; color:inherit; transition-delay:0.05s;">
-          <div class="port-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #181824 0%, #303060 100%);"></div>
-            <div class="port-overlay">
-              <div class="port-overlay-icon">→</div>
-            </div>
-          </div>
-          <div class="port-card-body">
-            <div class="port-card-cat">Video Campaign</div>
-            <div class="port-card-title">Neon Futures</div>
-            <p class="port-card-desc">A 60-second launch film for a consumer tech brand entering global markets.</p>
-          </div>
-        </a>
-
-        <!-- Project 3 — Photography -->
-        <a href="project.html?id=3" class="port-card fade-up" data-cat="photography" style="display:block; text-decoration:none; color:inherit; transition-delay:0.1s;">
-          <div class="port-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #1c1c1c 0%, #3a3a3a 100%);"></div>
-            <div class="port-overlay">
-              <div class="port-overlay-icon">→</div>
-            </div>
-          </div>
-          <div class="port-card-body">
-            <div class="port-card-cat">Photography</div>
-            <div class="port-card-title">Still Life Series</div>
-            <p class="port-card-desc">Editorial photography exploring texture and materiality for a high-end fragrance house.</p>
-          </div>
-        </a>
-
-        <!-- Project 4 — Video Campaign -->
-        <a href="project.html?id=4" class="port-card fade-up" data-cat="video" style="display:block; text-decoration:none; color:inherit; transition-delay:0.15s;">
-          <div class="port-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #1a2218 0%, #2e4228 100%);"></div>
-            <div class="port-overlay">
-              <div class="port-overlay-icon">→</div>
-            </div>
-          </div>
-          <div class="port-card-body">
-            <div class="port-card-cat">Video Campaign</div>
-            <div class="port-card-title">Roots &amp; Routes</div>
-            <p class="port-card-desc">A documentary-style campaign for a heritage outdoor apparel brand celebrating exploration.</p>
-          </div>
-        </a>
-
-        <!-- Project 5 — Brand Campaign -->
-        <a href="project.html?id=5" class="port-card fade-up" data-cat="brand" style="display:block; text-decoration:none; color:inherit; transition-delay:0.2s;">
-          <div class="port-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #241818 0%, #4a2828 100%);"></div>
-            <div class="port-overlay">
-              <div class="port-overlay-icon">→</div>
-            </div>
-          </div>
-          <div class="port-card-body">
-            <div class="port-card-cat">Brand Campaign</div>
-            <div class="port-card-title">Ember &amp; Ash</div>
-            <p class="port-card-desc">Full campaign development for an artisan spirits brand: identity, art direction, and packaging.</p>
-          </div>
-        </a>
-
-        <!-- Project 6 — Photography -->
-        <a href="project.html?id=6" class="port-card fade-up" data-cat="photography" style="display:block; text-decoration:none; color:inherit; transition-delay:0.25s;">
-          <div class="port-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #242218 0%, #484228 100%);"></div>
-            <div class="port-overlay">
-              <div class="port-overlay-icon">→</div>
-            </div>
-          </div>
-          <div class="port-card-body">
-            <div class="port-card-cat">Photography</div>
-            <div class="port-card-title">Portraits of Now</div>
-            <p class="port-card-desc">A portrait series documenting contemporary creatives across New York, London, and Tokyo.</p>
-          </div>
-        </a>
-
-      </div>
+      <!-- Data-driven project grid -->
+      <div class="portfolio-grid" id="portfolioGrid"></div>
       <!-- /portfolio-grid -->
 
     </div>
     <!-- /portfolio-grid-section -->
 
-    <!-- ══════════════════════════════════
-         CASE STUDY: URBAN MOTION CAMPAIGN
-    ══════════════════════════════════ -->
+        <!-- ══════════════════════════════════
+          CASE STUDY: FEATURED PROJECT
+        ══════════════════════════════════ -->
     <section class="case-study">
       <div class="case-study-inner">
 
         <!-- Header -->
         <div class="case-study-header fade-up">
           <div class="section-label" style="color: var(--gray-3);">Case Study</div>
-          <h2>Urban Motion<br>Campaign</h2>
+          <h2 id="caseTitle">Loading<br>Project</h2>
 
           <!-- Meta details -->
           <div class="case-meta" style="margin-top:32px;">
             <div class="case-meta-item">
               <span class="case-meta-label">Client</span>
-              <span class="case-meta-val">Meridian Apparel Co.</span>
+              <span class="case-meta-val" id="caseClient">—</span>
             </div>
             <div class="case-meta-item">
               <span class="case-meta-label">Category</span>
-              <span class="case-meta-val">Brand Campaign</span>
+              <span class="case-meta-val" id="caseCategory">—</span>
             </div>
             <div class="case-meta-item">
               <span class="case-meta-label">Year</span>
-              <span class="case-meta-val">2024</span>
+              <span class="case-meta-val" id="caseYear">—</span>
             </div>
             <div class="case-meta-item">
               <span class="case-meta-label">Scope</span>
-              <span class="case-meta-val">Creative Direction, Production, Photography</span>
+              <span class="case-meta-val" id="caseScope">—</span>
             </div>
           </div>
         </div>
 
         <!-- Hero image -->
         <div class="case-img-hero fade-up">
-          <div class="img-placeholder" style="height:100%; background: linear-gradient(135deg, #2a2318 0%, #4a3828 50%, #1a1a1a 100%);"></div>
+          <div class="img-placeholder" id="caseHero" style="height:100%; background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);"></div>
         </div>
 
         <!-- Body: description + detail -->
         <div class="case-body fade-up">
           <div class="case-body-text">
             <h3>The Challenge</h3>
-            <p>
-              Meridian Apparel Co. wanted to reposition their brand from mid-market streetwear
-              into the premium lifestyle space — without losing the cultural credibility that
-              made them relevant in the first place. The challenge was to speak fluently across
-              two audiences that rarely share the same visual language.
-            </p>
-            <p style="margin-top: 20px;">
-              We built the campaign around the idea of motion as identity — the way the city
-              moves, and how clothing moves through it. Shot across five New York neighborhoods
-              over three weeks, the imagery captures authentic energy while achieving the
-              elevated production standard the new positioning demanded.
-            </p>
+            <div id="caseChallenge">Loading challenge...</div>
           </div>
           <div class="case-body-text">
-            <h3>The Result</h3>
-            <p>
-              The campaign launched across digital, print, and out-of-home placements simultaneously.
-              Within the first 30 days, Meridian saw a 42% increase in site traffic and their highest
-              recorded sell-through rate on a seasonal collection launch.
-            </p>
-            <p style="margin-top: 20px;">
-              The work was featured in Hypebeast and Highsnobiety, cementing Meridian's repositioned
-              identity and opening doors to wholesale partnerships with premium retailers that had
-              previously declined.
-            </p>
-            <div style="margin-top: 32px; display: flex; gap: 40px;">
-              <div>
-                <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--warm); line-height:1;">42%</div>
-                <div style="font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top:6px;">Traffic Increase</div>
-              </div>
-              <div>
-                <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--warm); line-height:1;">3×</div>
-                <div style="font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top:6px;">Sell-through Rate</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Video placeholder -->
-        <div class="fade-up">
-          <div class="section-label" style="color: var(--gray-3); margin-bottom:24px;">Campaign Film</div>
-          <div class="video-placeholder">
-            <div class="img-placeholder" style="position:absolute; inset:0; opacity:0.3; background: linear-gradient(135deg, #1a1a1a 0%, #3a2a18 100%);"></div>
-            <div class="play-btn">▶</div>
-            <div class="video-label">Urban Motion — 60 sec. Campaign Film</div>
+            <h3>Our Approach</h3>
+            <div id="caseApproach">Loading approach...</div>
+            <div id="caseStats" style="margin-top: 32px; display: flex; gap: 40px; flex-wrap: wrap;"></div>
           </div>
         </div>
 
@@ -300,63 +169,148 @@
        JAVASCRIPT
   ══════════════════════════════════ -->
   <script>
-    // ── Custom cursor ──
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .port-card, .video-placeholder').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
-    });
+    function getFilterCategory(category) {
+      const v = (category || '').toLowerCase();
+      if (v.includes('video')) return 'video';
+      if (v.includes('photo')) return 'photography';
+      if (v.includes('brand')) return 'brand';
+      return 'all';
+    }
 
-    // ── Navbar scroll ──
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
+    function getScopeSnippet(scope) {
+      const text = scope || '';
+      return text.length > 110 ? text.slice(0, 107) + '...' : text;
+    }
 
-    // ── Mobile menu ──
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
+    function splitDescription(html) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html || '';
+      const paragraphs = wrapper.querySelectorAll('p');
+      return {
+        challenge: paragraphs[0] ? paragraphs[0].outerHTML : '<p>Challenge details coming soon.</p>',
+        approach: paragraphs[1] ? paragraphs[1].outerHTML : '<p>Approach details coming soon.</p>'
+      };
+    }
 
-    // ── Portfolio filter ──
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const portCards  = document.querySelectorAll('.port-card');
+    function renderPortfolioGrid(projects) {
+      const grid = document.getElementById('portfolioGrid');
+      grid.innerHTML = projects.map((project, idx) => {
+        const bg = project.masonry && project.masonry.length ? project.masonry[0].bg : 'linear-gradient(135deg,#1a1a1a 0%,#3a3a3a 100%)';
+        const filterCat = getFilterCategory(project.category);
+        const delay = (idx * 0.05).toFixed(2);
+        return `
+          <a href="project.html?id=${project.id}" class="port-card fade-up" data-cat="${filterCat}" style="display:block; text-decoration:none; color:inherit; transition-delay:${delay}s;">
+            <div class="port-card-img">
+              <div class="img-placeholder" style="background:${bg};"></div>
+              <div class="port-overlay"><div class="port-overlay-icon">→</div></div>
+            </div>
+            <div class="port-card-body">
+              <div class="port-card-cat">${project.category}</div>
+              <div class="port-card-title">${project.title}</div>
+              <p class="port-card-desc">${getScopeSnippet(project.scope)}</p>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Update active state
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    function renderCaseStudy(project) {
+      if (!project) return;
+      const parts = splitDescription(project.description);
+      const heroBg = project.masonry && project.masonry.length ? project.masonry[0].bg : 'linear-gradient(135deg,#1a1a1a 0%,#3a3a3a 100%)';
 
-        const filter = btn.dataset.filter;
+      document.getElementById('caseTitle').innerHTML = project.title.replace(' — ', ' —<br>');
+      document.getElementById('caseClient').textContent = project.client || '—';
+      document.getElementById('caseCategory').textContent = project.category || '—';
+      document.getElementById('caseYear').textContent = project.year || '—';
+      document.getElementById('caseScope').textContent = project.scope || '—';
+      document.getElementById('caseHero').style.background = heroBg;
+      document.getElementById('caseChallenge').innerHTML = parts.challenge;
+      document.getElementById('caseApproach').innerHTML = parts.approach;
 
-        portCards.forEach(card => {
-          const cat = card.dataset.cat;
-          const show = filter === 'all' || cat === filter;
-          card.style.display = show ? '' : 'none';
+      const stats = (project.stats || []).slice(0, 2);
+      const statsHtml = stats.map(item => `
+        <div>
+          <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--warm); line-height:1;">${item.num}</div>
+          <div style="font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top:6px;">${item.label}</div>
+        </div>
+      `).join('');
+      document.getElementById('caseStats').innerHTML = statsHtml;
+    }
+
+    function setupFilter() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          document.querySelectorAll('.port-card').forEach(card => {
+            const show = filter === 'all' || card.dataset.cat === filter;
+            card.style.display = show ? '' : 'none';
+          });
         });
       });
-    });
+    }
 
-    // ── Fade-up on scroll ──
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    function setupRevealObserver() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    }
+
+    function setupCursor() {
+      const cursor = document.getElementById('cursor');
+      document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
       });
-    }, { threshold: 0.12 });
+      document.addEventListener('mouseover', e => {
+        if (e.target.closest('a, button, .port-card')) cursor.classList.add('grow');
+      });
+      document.addEventListener('mouseout', e => {
+        if (e.target.closest('a, button, .port-card')) cursor.classList.remove('grow');
+      });
+    }
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    function setupNavbarAndMenu() {
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      });
+
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+    }
+
+    async function initPortfolioPage() {
+      setupCursor();
+      setupNavbarAndMenu();
+      try {
+        const response = await fetch('./projects.json');
+        const projects = await response.json();
+        renderPortfolioGrid(projects);
+        renderCaseStudy(projects[0]);
+        setupFilter();
+        setupRevealObserver();
+      } catch (err) {
+        console.error('Failed to load project data', err);
+      }
+    }
+
+    initPortfolioPage();
   </script>
 
 </body>
