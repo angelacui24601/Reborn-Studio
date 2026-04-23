@@ -5,18 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reborn Studios — Creative Agency</title>
   <meta name="description" content="Reborn Studios is a creative agency specializing in visual storytelling, brand campaigns, and multimedia production." />
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ══════════════════════════════════
-       CUSTOM CURSOR
-  ══════════════════════════════════ -->
+  <!-- ── CURSOR ── -->
   <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
   <!-- ══════════════════════════════════
        NAVBAR
@@ -24,7 +19,6 @@
   <nav class="navbar" id="navbar">
     <a href="index.html" class="nav-logo">REBORN<span>.</span></a>
 
-    <!-- Desktop Nav -->
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -33,9 +27,10 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <!-- Mobile Hamburger -->
+    <a href="contact.html" class="nav-cta">Start a Project</a>
+
     <div class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+      <span></span><span></span>
     </div>
   </nav>
 
@@ -49,205 +44,175 @@
   </div>
 
   <!-- ══════════════════════════════════
-       HERO SECTION
+       HERO — CINEMATIC VIDEO
   ══════════════════════════════════ -->
-  <section class="hero">
-    <div class="hero-noise"></div>
+  <section class="hero-video" id="heroSection">
 
-    <div class="hero-inner">
-      <!-- Live label -->
-      <div class="hero-ticker fade-up">
-        <div class="ticker-dot"></div>
-        Creative Agency — Est. 2024 — New York
-      </div>
+    <div class="hero-video-bg">
+      <div class="hero-video-placeholder"></div>
+    </div>
 
-      <!-- Main headline -->
-      <h1 class="fade-up" style="transition-delay:0.1s">
-        Creative<br>
-        Campaigns<br>
-        That <em>Move</em><br>
-        Culture
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-up">New York — Est. 2024</div>
+
+      <h1 class="hero-headline">
+        <span class="hero-line reveal-up" style="--d:0.05s">WE MAKE</span>
+        <span class="hero-line hero-line--italic reveal-up" style="--d:0.15s">culture</span>
+        <span class="hero-line reveal-up" style="--d:0.25s">MOVE.</span>
       </h1>
 
-      <!-- Sub + CTA -->
-      <div class="hero-bottom fade-up" style="transition-delay:0.2s">
-        <p class="hero-sub">
-          Reborn Studios is a creative agency specializing in visual storytelling,
-          brand campaigns, and multimedia production.
-        </p>
-        <div class="hero-cta">
-          <a href="portfolio.html" class="btn btn-fill">View Portfolio</a>
-          <a href="about.html" class="btn">About Us</a>
-        </div>
+      <div class="hero-footer reveal-up" style="--d:0.4s">
+        <a href="portfolio.html" class="hero-cta-link">
+          <span>View Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="hero-sub">Creative direction. Campaign production.<br>Visual storytelling.</p>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-bar"></div>
       <span>Scroll</span>
     </div>
+
   </section>
 
   <!-- ══════════════════════════════════
        MARQUEE BAND
   ══════════════════════════════════ -->
-  <div class="marquee-section">
-    <!-- Two identical tracks for seamless loop -->
+  <div class="marquee-band">
     <div class="marquee-track">
-      <!-- Track 1 -->
-      <span class="marquee-item">Creative Direction <span class="dot">·</span></span>
-      <span class="marquee-item">Brand Campaigns <span class="dot">·</span></span>
-      <span class="marquee-item">Visual Storytelling <span class="dot">·</span></span>
-      <span class="marquee-item">Campaign Production <span class="dot">·</span></span>
-      <span class="marquee-item">Motion Design <span class="dot">·</span></span>
-      <span class="marquee-item">Photography <span class="dot">·</span></span>
-      <!-- Track 2 (duplicate for loop) -->
-      <span class="marquee-item">Creative Direction <span class="dot">·</span></span>
-      <span class="marquee-item">Brand Campaigns <span class="dot">·</span></span>
-      <span class="marquee-item">Visual Storytelling <span class="dot">·</span></span>
-      <span class="marquee-item">Campaign Production <span class="dot">·</span></span>
-      <span class="marquee-item">Motion Design <span class="dot">·</span></span>
-      <span class="marquee-item">Photography <span class="dot">·</span></span>
+      <span>Creative Direction</span><span class="mdot">—</span>
+      <span>Brand Campaigns</span><span class="mdot">—</span>
+      <span>Visual Storytelling</span><span class="mdot">—</span>
+      <span>Campaign Production</span><span class="mdot">—</span>
+      <span>Motion Design</span><span class="mdot">—</span>
+      <span>Photography</span><span class="mdot">—</span>
+      <span>Creative Direction</span><span class="mdot">—</span>
+      <span>Brand Campaigns</span><span class="mdot">—</span>
+      <span>Visual Storytelling</span><span class="mdot">—</span>
+      <span>Campaign Production</span><span class="mdot">—</span>
+      <span>Motion Design</span><span class="mdot">—</span>
+      <span>Photography</span><span class="mdot">—</span>
     </div>
   </div>
 
   <!-- ══════════════════════════════════
-       AGENCY MISSION
+       STATEMENT SECTION
   ══════════════════════════════════ -->
-  <section class="mission-section">
-    <!-- Left: label -->
-    <div>
-      <div class="section-label fade-up">Our Mission</div>
+  <section class="statement-section">
+    <p class="statement-text reveal-up">
+      We are a creative and production studio<br>
+      built for brands that <em>refuse to stand still.</em>
+    </p>
+    <div class="statement-meta reveal-up" style="--d:0.12s">
+      <span>200+ Campaigns</span>
+      <span>80+ Clients</span>
+      <span>Global Reach</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       ASYMMETRIC WORK GRID
+  ══════════════════════════════════ -->
+  <section class="work-section">
+    <div class="work-header">
+      <span class="work-label reveal-up">Selected Work</span>
+      <a href="portfolio.html" class="work-all-link reveal-up" style="--d:0.08s">All Projects &rarr;</a>
     </div>
 
-    <!-- Right: statement -->
-    <div class="fade-up" style="transition-delay:0.1s">
-      <p class="mission-text">
-        Reborn Studios creates <strong>bold visual campaigns</strong> that connect brands
-        with modern audiences through storytelling, design,
-        and media production.
-      </p>
-      <div style="margin-top: 48px; display: flex; gap: 64px; flex-wrap: wrap;">
-        <div>
-          <div style="font-family: var(--font-display); font-size: 3rem; color: var(--black);">200<span style="color:var(--warm)">+</span></div>
-          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top: 4px;">Campaigns</div>
+    <div class="work-grid">
+
+      <a href="project.html?id=1" class="wcard wcard--large reveal-up">
+        <div class="wcard-img">
+          <div class="img-placeholder" style="background:linear-gradient(145deg,#0f0d0b 0%,#2a2010 60%,#1a1208 100%);"></div>
         </div>
-        <div>
-          <div style="font-family: var(--font-display); font-size: 3rem; color: var(--black);">80<span style="color:var(--warm)">+</span></div>
-          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top: 4px;">Global Clients</div>
+        <div class="wcard-info">
+          <span class="wcard-cat">Brand Campaign</span>
+          <h3 class="wcard-title">Urban Motion</h3>
         </div>
-        <div>
-          <div style="font-family: var(--font-display); font-size: 3rem; color: var(--black);">7<span style="color:var(--warm)">+</span></div>
-          <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-3); margin-top: 4px;">Years Active</div>
+      </a>
+
+      <div class="wcard-stack">
+        <a href="project.html?id=2" class="wcard reveal-up" style="--d:0.08s">
+          <div class="wcard-img">
+            <div class="img-placeholder" style="background:linear-gradient(145deg,#08080f 0%,#181830 60%,#100e20 100%);"></div>
+          </div>
+          <div class="wcard-info">
+            <span class="wcard-cat">Video Campaign</span>
+            <h3 class="wcard-title">Neon Futures</h3>
+          </div>
+        </a>
+        <a href="project.html?id=3" class="wcard reveal-up" style="--d:0.16s">
+          <div class="wcard-img">
+            <div class="img-placeholder" style="background:linear-gradient(145deg,#0d0d0d 0%,#252525 60%,#181818 100%);"></div>
+          </div>
+          <div class="wcard-info">
+            <span class="wcard-cat">Photography</span>
+            <h3 class="wcard-title">Still Life Series</h3>
+          </div>
+        </a>
+      </div>
+
+      <a href="project.html?id=4" class="wcard wcard--wide reveal-up" style="--d:0.1s">
+        <div class="wcard-img">
+          <div class="img-placeholder" style="background:linear-gradient(145deg,#080f0a 0%,#162214 60%,#0e1a0c 100%);"></div>
         </div>
+        <div class="wcard-info">
+          <span class="wcard-cat">Video Campaign</span>
+          <h3 class="wcard-title">Roots &amp; Routes</h3>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       WHAT WE DO — SPLIT STRIP
+  ══════════════════════════════════ -->
+  <section class="strip-section">
+    <div class="strip-left reveal-up">
+      <p class="strip-overline">What We Do</p>
+      <h2 class="strip-headline">Creative<br>Without<br>Limits.</h2>
+    </div>
+    <div class="strip-right">
+      <div class="strip-item reveal-up" style="--d:0.05s">
+        <span class="strip-num">01</span>
+        <div>
+          <h4>Creative Direction</h4>
+          <p>Concepts that move the needle — from brief to bold campaign system.</p>
+        </div>
+      </div>
+      <div class="strip-item reveal-up" style="--d:0.12s">
+        <span class="strip-num">02</span>
+        <div>
+          <h4>Campaign Production</h4>
+          <p>Full-service production: casting, locations, film, photography, post.</p>
+        </div>
+      </div>
+      <div class="strip-item reveal-up" style="--d:0.19s">
+        <span class="strip-num">03</span>
+        <div>
+          <h4>Content &amp; Rollout</h4>
+          <p>Assets built to perform — across social, OOH, digital, and editorial.</p>
+        </div>
+      </div>
+      <div class="strip-cta reveal-up" style="--d:0.26s">
+        <a href="services.html" class="btn btn-outline-dark">See All Services</a>
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════
-       SERVICES OVERVIEW
+       BOLD CTA BAND
   ══════════════════════════════════ -->
-  <section>
-    <div class="services-section">
-      <!-- Header -->
-      <div class="services-header">
-        <h2 class="services-title fade-up">What We Do</h2>
-        <div class="section-label fade-up" style="transition-delay:0.1s">Services</div>
-      </div>
-
-      <!-- 3-column grid -->
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card fade-up">
-          <span class="service-num">01</span>
-          <h3>Creative Direction</h3>
-          <p>
-            We shape the conceptual foundation of every campaign — from visual language
-            and tone to the overarching narrative that guides a brand's creative output.
-          </p>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card fade-up" style="transition-delay:0.1s">
-          <span class="service-num">02</span>
-          <h3>Campaign Production</h3>
-          <p>
-            End-to-end production capabilities: scripting, casting, filming, editing,
-            and delivery across digital, broadcast, and out-of-home platforms.
-          </p>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card fade-up" style="transition-delay:0.2s">
-          <span class="service-num">03</span>
-          <h3>Visual Storytelling</h3>
-          <p>
-            Crafting imagery and motion that speaks before words can. Photography,
-            art direction, and motion design converge to tell unforgettable stories.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       FEATURED WORK PREVIEW
-  ══════════════════════════════════ -->
-  <section class="featured-section">
-    <div class="featured-inner">
-      <!-- Header -->
-      <div class="featured-header">
-        <h2 class="fade-up">Featured<br>Work</h2>
-        <div class="section-label fade-up" style="color: var(--gray-3);">Selected Projects</div>
-      </div>
-
-      <!-- Project cards -->
-      <div class="featured-grid">
-
-        <!-- Card 1 -->
-        <div class="project-card fade-up">
-          <div class="project-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #1a1a1a 0%, #3a3028 100%);"></div>
-          </div>
-          <div class="project-card-info">
-            <div class="project-card-cat">Brand Campaign</div>
-            <div class="project-card-title">Urban Motion</div>
-            <p class="project-card-desc">A visual identity campaign bridging street culture with luxury sportswear.</p>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="project-card fade-up" style="transition-delay:0.1s">
-          <div class="project-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #2a2318 0%, #4a3820 100%);"></div>
-          </div>
-          <div class="project-card-info">
-            <div class="project-card-cat">Photography</div>
-            <div class="project-card-title">Still Life Series</div>
-            <p class="project-card-desc">Editorial photography series exploring texture and materiality for a fragrance house.</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="project-card fade-up" style="transition-delay:0.2s">
-          <div class="project-card-img">
-            <div class="img-placeholder" style="background: linear-gradient(135deg, #181824 0%, #282838 100%);"></div>
-          </div>
-          <div class="project-card-info">
-            <div class="project-card-cat">Video Campaign</div>
-            <div class="project-card-title">Neon Futures</div>
-            <p class="project-card-desc">A 60-second launch film for a tech brand entering the consumer market.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="featured-footer fade-up">
-        <a href="portfolio.html" class="btn btn-warm">See All Work</a>
-      </div>
-    </div>
+  <section class="cta-band">
+    <h2 class="cta-band-text reveal-up">
+      Let&apos;s build<br><em>what&apos;s next.</em>
+    </h2>
+    <a href="contact.html" class="cta-band-btn reveal-up" style="--d:0.15s">Start a Project</a>
   </section>
 
   <!-- ══════════════════════════════════
@@ -255,16 +220,10 @@
   ══════════════════════════════════ -->
   <footer class="footer">
     <div class="footer-inner">
-      <!-- Brand -->
       <div>
         <div class="footer-logo">REBORN<span>.</span></div>
-        <p class="footer-tagline">
-          Bold visual campaigns that connect brands<br>
-          with modern audiences.
-        </p>
+        <p class="footer-tagline">Bold visual campaigns that connect brands<br>with modern audiences.</p>
       </div>
-
-      <!-- Navigation -->
       <div class="footer-col">
         <h4>Navigation</h4>
         <a href="index.html">Home</a>
@@ -273,8 +232,6 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
-
-      <!-- Contact -->
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="mailto:hello@rebornstudios.com">hello@rebornstudios.com</a>
@@ -287,10 +244,8 @@
         </div>
       </div>
     </div>
-
-    <!-- Bottom bar -->
     <div class="footer-bottom">
-      <span>© 2024 Reborn Studios. All rights reserved.</span>
+      <span>&copy; 2024 Reborn Studios. All rights reserved.</span>
       <span>New York, NY</span>
     </div>
   </footer>
@@ -299,25 +254,44 @@
        JAVASCRIPT
   ══════════════════════════════════ -->
   <script>
-    // ── Custom cursor ──
-    const cursor = document.getElementById('cursor');
+    /* ── Custom cursor ── */
+    const cursor   = document.getElementById('cursor');
+    const follower = document.getElementById('cursorFollower');
+    let fx = 0, fy = 0, mx = 0, my = 0;
+
     document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .service-card, .project-card').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top  = my + 'px';
     });
 
-    // ── Navbar scroll ──
+    (function animateFollower() {
+      fx += (mx - fx) * 0.12;
+      fy += (my - fy) * 0.12;
+      follower.style.left = fx + 'px';
+      follower.style.top  = fy + 'px';
+      requestAnimationFrame(animateFollower);
+    })();
+
+    document.querySelectorAll('a, button, .wcard').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('grow');
+        follower.classList.add('grow');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('grow');
+        follower.classList.remove('grow');
+      });
+    });
+
+    /* ── Navbar scroll ── */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // ── Mobile menu ──
-    const hamburger = document.getElementById('hamburger');
+    /* ── Mobile menu ── */
+    const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
@@ -325,17 +299,27 @@
       document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
     });
 
-    // ── Fade-up on scroll ──
-    const observer = new IntersectionObserver(entries => {
+    /* ── Reveal on scroll ── */
+    const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          const el = entry.target;
+          const delay = el.style.getPropertyValue('--d') || '0s';
+          el.style.transitionDelay = delay;
+          el.classList.add('visible');
+          revealObserver.unobserve(el);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+
+    /* ── Hero parallax ── */
+    const heroBg = document.querySelector('.hero-video-placeholder');
+    window.addEventListener('scroll', () => {
+      if (!heroBg) return;
+      heroBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+    }, { passive: true });
   </script>
 
 </body>
