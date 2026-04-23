@@ -43,63 +43,55 @@
       <h1 class="fade-up" style="transition-delay:0.1s">Services</h1>
     </div>
 
-    <section class="services-overview">
-      <div>
-        <div class="section-label fade-up">What We Offer</div>
-        <p class="services-intro fade-up" style="transition-delay:0.1s">
-          We partner with brands to build campaigns that move with culture,
-          combining strategic thinking with high-craft execution.
-        </p>
-      </div>
+    <section class="services-columns-wrap">
+      <div class="section-label fade-up">What We Offer</div>
+      <p class="services-columns-intro fade-up" style="transition-delay:0.08s">
+        Three focused service pillars designed to help brands build sharp ideas and execute them across every touchpoint.
+      </p>
 
-      <div class="services-list">
-        <article class="service-item fade-up" style="transition-delay:0.12s">
-          <span class="service-num">01</span>
+      <div class="services-columns">
+        <article class="service-column fade-up" style="transition-delay:0.12s">
+          <div class="service-column-image">
+            <div class="img-placeholder" style="background: linear-gradient(145deg, #251d16 0%, #3d2f24 100%);"></div>
+          </div>
           <h3>Creative Direction</h3>
-          <p>Campaign concepts, creative systems, and visual language development from brief to launch.</p>
+          <ul>
+            <li>Brand and campaign concept development</li>
+            <li>Visual language and mood systems</li>
+            <li>Art direction for photo and film</li>
+            <li>Creative deck and pre-production alignment</li>
+          </ul>
         </article>
-        <article class="service-item fade-up" style="transition-delay:0.16s">
-          <span class="service-num">02</span>
+
+        <article class="service-column fade-up" style="transition-delay:0.18s">
+          <div class="service-column-image">
+            <div class="img-placeholder" style="background: linear-gradient(145deg, #151c24 0%, #243447 100%);"></div>
+          </div>
           <h3>Campaign Production</h3>
-          <p>Full production workflow across film, stills, and social, including casting, locations, and post.</p>
+          <ul>
+            <li>Production planning and scheduling</li>
+            <li>Casting, locations, and crew curation</li>
+            <li>On-set direction and production management</li>
+            <li>Editing, color, and post delivery</li>
+          </ul>
         </article>
-        <article class="service-item fade-up" style="transition-delay:0.2s">
-          <span class="service-num">03</span>
-          <h3>Brand Campaigns</h3>
-          <p>Integrated brand launches across digital, editorial, and out-of-home channels.</p>
-        </article>
-        <article class="service-item fade-up" style="transition-delay:0.24s">
-          <span class="service-num">04</span>
-          <h3>Photography & Motion</h3>
-          <p>Art-directed still and motion content built to scale across performance and brand contexts.</p>
+
+        <article class="service-column fade-up" style="transition-delay:0.24s">
+          <div class="service-column-image">
+            <div class="img-placeholder" style="background: linear-gradient(145deg, #222018 0%, #3f3a26 100%);"></div>
+          </div>
+          <h3>Content & Rollout</h3>
+          <ul>
+            <li>Cross-channel campaign asset systems</li>
+            <li>Photography and motion content packages</li>
+            <li>Launch planning for social, web, and OOH</li>
+            <li>Performance-ready deliverables by format</li>
+          </ul>
         </article>
       </div>
-    </section>
 
-    <section class="services-process">
-      <div class="section-label fade-up">Process</div>
-      <div class="process-grid">
-        <div class="process-card fade-up">
-          <div class="process-step">Discover</div>
-          <p>We align on audience, ambition, and the moments that matter most.</p>
-        </div>
-        <div class="process-card fade-up" style="transition-delay:0.1s">
-          <div class="process-step">Develop</div>
-          <p>We shape the concept, creative direction, and production roadmap.</p>
-        </div>
-        <div class="process-card fade-up" style="transition-delay:0.2s">
-          <div class="process-step">Deliver</div>
-          <p>We execute with precision and launch across channels with measurable impact.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="services-cta">
-      <div class="section-label fade-up" style="justify-content:center;">Start a Project</div>
-      <h2 class="fade-up" style="transition-delay:0.1s">Need Creative Support?</h2>
-      <p class="fade-up" style="transition-delay:0.2s">Tell us what you are building and we will shape the right approach together.</p>
-      <div class="fade-up" style="transition-delay:0.3s;">
-        <a href="contact.html" class="btn btn-fill">Contact Us</a>
+      <div class="services-columns-cta fade-up" style="transition-delay:0.3s;">
+        <a href="contact.html" class="btn btn-fill">Start a Project</a>
       </div>
     </section>
   </main>
@@ -142,7 +134,7 @@
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
-    document.querySelectorAll('a, button, .service-item, .process-card').forEach(el => {
+    document.querySelectorAll('a, button, .service-column').forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
     });

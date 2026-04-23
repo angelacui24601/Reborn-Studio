@@ -315,8 +315,8 @@ body { cursor: none; }
 
 /* Page header for interior pages */
 .page-header {
-  padding-top: calc(var(--nav-h) + 40px);
-  padding-bottom: 80px;
+  padding-top: calc(var(--nav-h) + 20px);
+  padding-bottom: 40px;
   padding-left: 48px;
   padding-right: 48px;
   max-width: 1200px;
@@ -942,6 +942,57 @@ body { cursor: none; }
    SERVICES PAGE
 ════════════════════════════════ */
 .services-main { padding-top: var(--nav-h); }
+.services-columns-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 48px 120px;
+}
+.services-columns-intro {
+  max-width: 760px;
+  color: var(--gray-2);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 52px;
+}
+.services-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.service-column {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 18px 18px 24px;
+  background: var(--white);
+}
+.service-column-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.service-column h3 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.service-column ul {
+  list-style: disc;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+.service-column li {
+  color: var(--gray-2);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.services-columns-cta {
+  margin-top: 44px;
+}
+
 .services-overview {
   max-width: 1200px;
   margin: 0 auto;
@@ -1424,12 +1475,14 @@ body { cursor: none; }
   .featured-section, .portfolio-grid-section,
   .case-study, .about-vision, .team-section,
   .services-overview, .services-process,
+  .services-columns-wrap,
   .contact-layout {
     padding-left: 32px;
     padding-right: 32px;
   }
   .services-grid, .featured-grid, .portfolio-grid,
   .team-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-columns { grid-template-columns: 1fr; }
   .mission-section { grid-template-columns: 1fr; gap: 32px; }
   .about-vision, .services-overview, .contact-layout { grid-template-columns: 1fr; }
   .case-body { grid-template-columns: 1fr; }
@@ -1446,6 +1499,7 @@ body { cursor: none; }
   .featured-section, .portfolio-grid-section,
   .case-study, .about-vision, .team-section,
   .services-overview, .services-process,
+  .services-columns-wrap,
   .contact-layout,
   .page-header { padding-left: 20px; padding-right: 20px; }
 
