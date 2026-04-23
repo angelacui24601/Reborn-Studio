@@ -18,6 +18,8 @@ export default async function ProjectDetailPage({ params }) {
 
   const index = projects.findIndex((item) => item.id === project.id);
   const nextProject = projects[(index + 1) % projects.length];
+  const galleryItems = project.media?.length ? project.media : (project.masonry || []);
+  const coverBg = project.coverBg || galleryItems[0]?.bg || "#222";
 
   return (
     <>
@@ -70,7 +72,7 @@ export default async function ProjectDetailPage({ params }) {
               <div className="right-section-label">Campaign Film</div>
               <div className="masonry-video" style={{ marginBottom: 32 }}>
                 <div className="video-placeholder">
-                  <div className="img-placeholder" style={{ position: "absolute", inset: 0, opacity: 0.25, background: project.masonry?.[0]?.bg || "#222" }}></div>
+                  <div className="img-placeholder" style={{ position: "absolute", inset: 0, opacity: 0.25, background: coverBg }}></div>
                   <div className="play-btn">▶</div>
                   <div className="video-label">{project.videoLabel}</div>
                 </div>
@@ -80,7 +82,7 @@ export default async function ProjectDetailPage({ params }) {
 
           <div className="right-section-label">Visual Gallery</div>
           <div className="masonry-grid">
-            {(project.masonry || []).map((item) => (
+            {galleryItems.map((item) => (
               <div key={item.caption} className={`masonry-item ${item.size}`}>
                 <div className="img-placeholder" style={{ background: item.bg }}></div>
                 <div className="masonry-caption">{item.caption}</div>

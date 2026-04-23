@@ -42,7 +42,8 @@ export default async function PortfolioPage() {
 
           <div className="portfolio-grid" id="portfolioGrid">
             {projects.map((project, idx) => {
-              const bg = project.masonry?.[0]?.bg || "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)";
+              const mediaItems = project.media?.length ? project.media : (project.masonry || []);
+              const bg = project.coverBg || mediaItems[0]?.bg || "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)";
               return (
                 <Link
                   key={project.id}
@@ -85,7 +86,7 @@ export default async function PortfolioPage() {
               </div>
 
               <div className="case-img-hero fade-up">
-                <div className="img-placeholder" style={{ height: "100%", background: featured.masonry?.[0]?.bg || "#222" }}></div>
+                <div className="img-placeholder" style={{ height: "100%", background: featured.coverBg || (featured.media?.[0]?.bg || featured.masonry?.[0]?.bg) || "#222" }}></div>
               </div>
 
               <div className="case-body fade-up">
