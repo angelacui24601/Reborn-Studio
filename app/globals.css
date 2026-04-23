@@ -307,6 +307,14 @@ body { cursor: none; }
   background-size: 200% 200%;
   animation: shimmer 3s ease infinite;
 }
+
+/* Real media blocks should not be covered by the shimmer overlay */
+.port-card-img .img-placeholder::after,
+.case-img-hero .img-placeholder::after,
+.masonry-item .img-placeholder::after,
+.masonry-video .img-placeholder::after {
+  display: none;
+}
 @keyframes shimmer {
   0%   { background-position: 200% 0%; }
   100% { background-position: -200% 0%; }
