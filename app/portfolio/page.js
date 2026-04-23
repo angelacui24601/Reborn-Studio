@@ -44,6 +44,7 @@ export default async function PortfolioPage() {
             {projects.map((project, idx) => {
               const mediaItems = project.media?.length ? project.media : (project.masonry || []);
               const bg = project.coverBg || mediaItems[0]?.bg || "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)";
+              const isImageBg = /^url\(/i.test((bg || "").trim());
               return (
                 <Link
                   key={project.id}
@@ -53,7 +54,7 @@ export default async function PortfolioPage() {
                   style={{ display: "block", textDecoration: "none", color: "inherit", transitionDelay: `${idx * 0.05}s` }}
                 >
                   <div className="port-card-img">
-                    <div className="img-placeholder" style={{ background: bg }}></div>
+                    <div className={`img-placeholder${isImageBg ? " has-media-image" : ""}`} style={{ background: bg }}></div>
                     <div className="port-overlay"><div className="port-overlay-icon">→</div></div>
                   </div>
                   <div className="port-card-body">
@@ -68,6 +69,11 @@ export default async function PortfolioPage() {
         </div>
 
         {featured && (
+          (() => {
+            const featuredBg = featured.coverBg || (featured.media?.[0]?.bg || featured.masonry?.[0]?.bg) || "#222";
+            const isFeaturedImageBg = /^url\(/i.test((featuredBg || "").trim());
+
+            return (
           <section className="case-study">
             <div className="case-study-inner">
               <div className="case-study-header fade-up">
@@ -86,7 +92,7 @@ export default async function PortfolioPage() {
               </div>
 
               <div className="case-img-hero fade-up">
-                <div className="img-placeholder" style={{ height: "100%", background: featured.coverBg || (featured.media?.[0]?.bg || featured.masonry?.[0]?.bg) || "#222" }}></div>
+                <div className={`img-placeholder${isFeaturedImageBg ? " has-media-image" : ""}`} style={{ height: "100%", background: featuredBg }}></div>
               </div>
 
               <div className="case-body fade-up">
@@ -101,6 +107,8 @@ export default async function PortfolioPage() {
               </div>
             </div>
           </section>
+            );
+          })()
         )}
       </main>
 

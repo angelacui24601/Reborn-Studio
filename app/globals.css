@@ -1127,6 +1127,8 @@ body { cursor: none; }
   overflow: hidden;
 }
 .port-card-img .img-placeholder {
+  width: 100%;
+  height: 100%;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .port-card:hover .port-card-img .img-placeholder {
@@ -1791,14 +1793,14 @@ body { cursor: none; }
   padding: 48px 40px 80px;
 }
 
-/* Masonry using CSS columns */
+/* Masonry using CSS grid (left-to-right, then top-to-bottom) */
 .masonry-grid {
-  column-count: 2;
-  column-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  grid-auto-flow: row dense;
 }
 .masonry-item {
-  break-inside: avoid;
-  margin-bottom: 16px;
   position: relative;
   overflow: hidden;
 }
@@ -1811,10 +1813,19 @@ body { cursor: none; }
 
 /* Various aspect ratios for visual variety */
 .masonry-item.tall  .img-placeholder { aspect-ratio: 3/4; }
+.masonry-item.wide  { grid-column: span 2; }
 .masonry-item.wide  .img-placeholder { aspect-ratio: 16/9; }
 .masonry-item.sq    .img-placeholder { aspect-ratio: 1/1; }
 .masonry-item.short .img-placeholder { aspect-ratio: 4/3; }
 .masonry-item.port  .img-placeholder { aspect-ratio: 2/3; }
+
+/* Ensure uploaded media is fully visible without cutoff */
+.img-placeholder.has-media-image {
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0f0f0f;
+}
 
 /* Caption overlay on hover */
 .masonry-caption {
@@ -1901,7 +1912,8 @@ body { cursor: none; }
     margin-left: 0;
     padding: 32px 20px 60px;
   }
-  .masonry-grid { column-count: 1; }
+  .masonry-grid { grid-template-columns: 1fr; }
+  .masonry-item.wide { grid-column: span 1; }
   .next-project-btn { margin-top: 40px; }
 }
 
