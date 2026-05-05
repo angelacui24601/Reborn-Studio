@@ -22,7 +22,7 @@ export default async function PortfolioPage() {
       <main className="portfolio-main">
         <div className="page-header">
           <div className="section-label fade-up">Our Work</div>
-          <h1 className="fade-up" style={{ transitionDelay: "0.1s" }}>Portfolio</h1>
+          <h1 className="fade-up" style={{ transitionDelay: "0.1s" }}>Work</h1>
         </div>
 
         <PortfolioFilters projects={projects} />
