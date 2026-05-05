@@ -37,6 +37,16 @@ export default async function ProjectDetailPage({ params }) {
             <div className="proj-cat-badge">{project.category}</div>
             <h1 className="proj-title">{project.title}</h1>
 
+            <div className="proj-tags">
+              <span className="proj-tag">{project.client}</span>
+              {(project.services || []).map((s) => (
+                <span key={s} className="proj-tag">{s}</span>
+              ))}
+              {project.industry && (
+                <span className="proj-tag">{project.industry}</span>
+              )}
+            </div>
+
             <div className="proj-meta-grid">
               <div className="proj-meta-item"><div className="proj-meta-label">Client</div><div className="proj-meta-val">{project.client}</div></div>
               <div className="proj-meta-item"><div className="proj-meta-label">Year</div><div className="proj-meta-val">{project.year}</div></div>

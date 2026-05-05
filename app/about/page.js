@@ -56,6 +56,57 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="company-section">
+          <div className="company-inner">
+            <div className="section-label fade-up">Trusted By</div>
+            <h2 className="company-title fade-up" style={{ transitionDelay: "0.08s" }}>Brands We&apos;ve Worked With</h2>
+            <p className="company-copy fade-up" style={{ transitionDelay: "0.12s" }}>
+              Replace these placeholders with your partner logos as you grow your client list.
+            </p>
+
+            <div className="company-logos">
+              <div className="company-logo-tile fade-up">Nike</div>
+              <div className="company-logo-tile fade-up" style={{ transitionDelay: "0.05s" }}>Adidas</div>
+              <div className="company-logo-tile fade-up" style={{ transitionDelay: "0.1s" }}>Puma</div>
+              <div className="company-logo-tile fade-up" style={{ transitionDelay: "0.15s" }}>New Balance</div>
+              <div className="company-logo-tile fade-up" style={{ transitionDelay: "0.2s" }}>Reebok</div>
+              <div className="company-logo-tile fade-up" style={{ transitionDelay: "0.25s" }}>Asics</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="testimonials-section">
+          <div className="testimonials-inner">
+            <div className="section-label fade-up" style={{ color: "var(--gray-3)" }}>Testimonials</div>
+            <h2 className="testimonials-title fade-up" style={{ transitionDelay: "0.08s" }}>
+              What Clients Say
+            </h2>
+
+            <div className="testimonials-grid">
+              <article className="testimonial-card fade-up" style={{ transitionDelay: "0.12s" }}>
+                <p className="testimonial-quote">
+                  “Reborn translated our vision into a campaign that felt premium and culturally real. The team is fast, thoughtful, and deeply creative.”
+                </p>
+                <p className="testimonial-author">Marketing Lead, Nike</p>
+              </article>
+
+              <article className="testimonial-card fade-up" style={{ transitionDelay: "0.18s" }}>
+                <p className="testimonial-quote">
+                  “From pre-production to final assets, every touchpoint was organized and intentional. We launched with total confidence.”
+                </p>
+                <p className="testimonial-author">Brand Director, Adidas</p>
+              </article>
+
+              <article className="testimonial-card fade-up" style={{ transitionDelay: "0.24s" }}>
+                <p className="testimonial-quote">
+                  “Their creative direction gave our brand a stronger voice across social, web, and OOH. Results exceeded expectations.”
+                </p>
+                <p className="testimonial-author">Founder, Atelier 88</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section style={{ padding: "120px 48px", maxWidth: 1200, margin: "0 auto", textAlign: "center" }}>
           <div className="section-label fade-up" style={{ justifyContent: "center" }}>Work With Us</div>
           <h2 className="fade-up" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.9, color: "var(--black)", margin: "24px 0 48px" }}>

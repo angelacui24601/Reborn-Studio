@@ -2,15 +2,8 @@ import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ClientEffects from "@/components/ClientEffects";
+import PortfolioFilters from "@/components/PortfolioFilters";
 import { getProjects } from "@/lib/projects";
-
-function getFilterCategory(category) {
-  const v = (category || "").toLowerCase();
-  if (v.includes("video")) return "video";
-  if (v.includes("photo")) return "photography";
-  if (v.includes("brand")) return "brand";
-  return "all";
-}
 
 function getFirstParagraph(description) {
   const match = (description || "").match(/<p>(.*?)<\/p>/i);
@@ -32,41 +25,7 @@ export default async function PortfolioPage() {
           <h1 className="fade-up" style={{ transitionDelay: "0.1s" }}>Portfolio</h1>
         </div>
 
-        <div className="portfolio-grid-section">
-          <div className="filter-bar fade-up">
-            <button className="filter-btn active" data-filter="all">All Work</button>
-            <button className="filter-btn" data-filter="video">Video Campaign</button>
-            <button className="filter-btn" data-filter="photography">Photography</button>
-            <button className="filter-btn" data-filter="brand">Brand Campaign</button>
-          </div>
-
-          <div className="portfolio-grid" id="portfolioGrid">
-            {projects.map((project, idx) => {
-              const mediaItems = project.media?.length ? project.media : (project.masonry || []);
-              const bg = project.coverBg || mediaItems[0]?.bg || "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)";
-              const isImageBg = /^url\(/i.test((bg || "").trim());
-              return (
-                <Link
-                  key={project.id}
-                  href={`/project/${project.id}`}
-                  className="port-card fade-up"
-                  data-cat={getFilterCategory(project.category)}
-                  style={{ display: "block", textDecoration: "none", color: "inherit", transitionDelay: `${idx * 0.05}s` }}
-                >
-                  <div className="port-card-img">
-                    <div className={`img-placeholder${isImageBg ? " has-media-image" : ""}`} style={{ background: bg }}></div>
-                    <div className="port-overlay"><div className="port-overlay-icon">→</div></div>
-                  </div>
-                  <div className="port-card-body">
-                    <div className="port-card-cat">{project.category}</div>
-                    <div className="port-card-title">{project.title}</div>
-                    <p className="port-card-desc">{project.scope}</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+        <PortfolioFilters projects={projects} />
 
         {featured && (
           (() => {

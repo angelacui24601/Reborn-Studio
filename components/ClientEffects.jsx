@@ -58,30 +58,6 @@ export default function ClientEffects() {
       document.body.style.overflow = mobileMenu?.classList.contains("open") ? "hidden" : "";
     };
 
-    const setupPortfolioFilter = () => {
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      if (!filterBtns.length) return () => {};
-
-      const handlers = [];
-      filterBtns.forEach((btn) => {
-        const handler = () => {
-          filterBtns.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          const filter = btn.dataset.filter;
-          document.querySelectorAll(".port-card").forEach((card) => {
-            const show = filter === "all" || card.dataset.cat === filter;
-            card.style.display = show ? "" : "none";
-          });
-        };
-        btn.addEventListener("click", handler);
-        handlers.push({ btn, handler });
-      });
-
-      return () => {
-        handlers.forEach(({ btn, handler }) => btn.removeEventListener("click", handler));
-      };
-    };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -92,7 +68,6 @@ export default function ClientEffects() {
     }, { threshold: 0.1 });
 
     document.querySelectorAll(".fade-up, .reveal-up").forEach((el) => observer.observe(el));
-    const teardownFilter = setupPortfolioFilter();
 
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseover", onMouseOver);
@@ -108,7 +83,6 @@ export default function ClientEffects() {
       window.removeEventListener("scroll", onScroll);
       hamburger?.removeEventListener("click", onMenuClick);
       observer.disconnect();
-      teardownFilter();
       if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
